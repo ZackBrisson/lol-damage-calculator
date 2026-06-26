@@ -1,0 +1,18 @@
+☑ Create project structure
+☑ Gather Ziggs stats
+☑ Gather Ziggs abilities
+☑ Add first item
+
+⬜ Install Git
+⬜ Create GitHub repo
+⬜ Build HTML layout
+⬜ Add CSS
+⬜ Create Ziggs object
+⬜ Implement Q calculation
+⬜ Display damage
+⬜ Calculate remaining HP
+⬜ Champion level selector
+⬜ Ability rank selector
+⬜ Item selection
+⬜ Champion vs Champion
+⬜ Riot API integration
