@@ -1,0 +1,18 @@
+Leona Stat Breakdown
+
+
+GENERAL
+- Role: Support Tank
+- Resource: Mana
+- Damage Type: Magic
+
+BASE STATS
+- HP:646
+- HP Growth:101
+- Mana:302
+- Mana Growth:40
+- Armor:43
+- Armor Growth:4.8
+- Magic Resist:32
+- MR Growth:2.05
+- Movement Speed:335

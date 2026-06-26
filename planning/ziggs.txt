@@ -1,0 +1,55 @@
+Ziggs Stat Breakdown
+
+
+GENERAL
+- Role: ADC/Mid Lane
+- Resource: Mana
+- Damage Type: Magic AP
+
+BASE STATS
+- HP:606
+- HP Growth:106
+- Mana:480
+- Mana Growth:23.5
+- Armor:21
+- Armor Growth:4.7
+- Magic Resist:30
+- MR Growth:1.3
+- Movement Speed:325
+
+PASSIVE
+- Name: Short Fuse
+- Damage: 20
+- Scaling: +50% AP (Increased to %75 against structures)
+- Cooldown: 12
+- Notes: Reduced by 4-6 seconds (depending on level) when ziggs casts an ability
+
+Q - BOUNCING BOMB
+- Mana Cost:80
+- Cooldown:6sec
+- Damage:80
+- AP Ratio:+60%
+- Notes:
+
+W - SATCHEL CHARGE
+- Mana Cost:80
+- Cooldown:20sec
+- Damage:70
+- AP Ratio:+50%
+- Notes: Can execute towers under certain max health (level dependent)
+
+
+E - HEXPLOSIVE MINEFIELD
+- Mana Cost:70
+- Cooldown:16sec
+- Damage:30 (per mine)
+- AP Ratio:+25%
+- Notes: slows enemies that come into contact for 1.5sec
+
+
+R - MEGA INFERNO BOMB
+- Mana Cost:100
+- Cooldown:120sec
+- Damage:300
+- AP Ratio:+100%
+- Notes: reduced to 65% damage if hit on the outer ring
