@@ -77,9 +77,8 @@ const leonaRemainingHealth = document.getElementById("LeonaRemainingHealth");
 
 calculatebutton.addEventListener("click", () => {
     console.log("Calculate button clicked");
-    ziggsDamage.textContent = "Ziggs Damage: 80";
-    leonaRemainingHealth.textContent = "Leona Remaining Health: 566";
+    let ziggsQDamage = ziggs.abilities[0].damage;
+    let remainingHealth = leona.stats.hp - ziggsQDamage;
+    ziggsDamage.textContent = "Ziggs Damage: " + ziggsQDamage;
+    leonaRemainingHealth.textContent = "Leona Remaining Health: " + remainingHealth;
 });
-
-ziggsDamage.textContent = "Ziggs Damage: 80";
-leonaRemainingHealth.textContent = "Leona Remaining Health: 566";
