@@ -70,3 +70,16 @@ const leona = {
 };
 
 console.log(leona);
+
+const calculatebutton = document.getElementById("calculate");
+const ziggsDamage = document.getElementById("ZiggsDamage");
+const leonaRemainingHealth = document.getElementById("LeonaRemainingHealth");
+
+calculatebutton.addEventListener("click", () => {
+    console.log("Calculate button clicked");
+    ziggsDamage.textContent = "Ziggs Damage: 80";
+    leonaRemainingHealth.textContent = "Leona Remaining Health: 566";
+});
+
+ziggsDamage.textContent = "Ziggs Damage: 80";
+leonaRemainingHealth.textContent = "Leona Remaining Health: 566";
