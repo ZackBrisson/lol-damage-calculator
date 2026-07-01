@@ -7,9 +7,9 @@ const ziggs = {
             name: "Bouncing Bomb",
             slot: "Q",
             description: "Throws a bouncing bomb that deals magic damage to enemies.",
-            damage: 80,
-            cooldown: 6,
-            manaCost: 50
+            damage: [80,130,180,230,280],
+            cooldown: [6,5.5,5,4.5,4],
+            manaCost: [50,55,60,65,70]
         },
         {
             name: "Satchel Charge",
@@ -73,16 +73,17 @@ console.log(leona);
 
 const calculatebutton = document.getElementById("calculate");
 const ziggsDamage = document.getElementById("ZiggsDamage");
+const abilityLevel = document.getElementById("abilityLevel");
 const leonaRemainingHealth = document.getElementById("LeonaRemainingHealth");
 const ability = document.getElementById("ability");
 
 calculatebutton.addEventListener("click", () => {
     console.log("Calculate button clicked");
-    console.log(ability.value);
-    let ziggsQDamage = ziggs.abilities[0].damage;
-    let ziggsWDamage = ziggs.abilities[1].damage;
-    let ziggsEDamage = ziggs.abilities[2].damage;
-    let ziggsRDamage = ziggs.abilities[3].damage;
+    console.log(ability.value - 1);
+    let ziggsQDamage = ziggs.abilities[0].damage[abilityLevel.value - 1];
+    let ziggsWDamage = ziggs.abilities[1].damage[abilityLevel.value - 1];
+    let ziggsEDamage = ziggs.abilities[2].damage[abilityLevel.value - 1];
+    let ziggsRDamage = ziggs.abilities[3].damage[abilityLevel.value - 1];
 
     let selectedDamage = ziggsQDamage;
     
