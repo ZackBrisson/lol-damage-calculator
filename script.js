@@ -74,12 +74,21 @@ console.log(leona);
 const calculatebutton = document.getElementById("calculate");
 const ziggsDamage = document.getElementById("ZiggsDamage");
 const abilityLevel = document.getElementById("abilityLevel");
+const defenseLevel = document.getElementById("defenseLevel");
 const leonaRemainingHealth = document.getElementById("LeonaRemainingHealth");
 const ability = document.getElementById("ability");
 
+function calculateStat(baseStat, growthStat, level) {
+    return Math.round(
+        baseStat +
+        growthStat * (level - 1) * (0.7025 + 0.0175 * (level - 1))
+    );
+}
+
 calculatebutton.addEventListener("click", () => {
     console.log("Calculate button clicked");
-    console.log(ability.value - 1);
+    console.log(ability.value);
+    console.log(defenseLevel.value);
     let ziggsQDamage = ziggs.abilities[0].damage[abilityLevel.value - 1];
     let ziggsWDamage = ziggs.abilities[1].damage[abilityLevel.value - 1];
     let ziggsEDamage = ziggs.abilities[2].damage[abilityLevel.value - 1];
@@ -100,7 +109,15 @@ calculatebutton.addEventListener("click", () => {
     selectedDamage = ziggsRDamage;
 }
 
-    let remainingHealth = leona.stats.hp - selectedDamage;
+ let leonaHP = calculateStat(
+    leona.stats.hp,
+    leona.stats.hpGrowth,
+    defenseLevel.value
+);
+
+console.log(leonaHP);
+
+    let remainingHealth = leonaHP - selectedDamage;
     ziggsDamage.textContent = "Ziggs Damage: " + selectedDamage;
     leonaRemainingHealth.textContent = "Leona Remaining Health: " + remainingHealth;
 });
