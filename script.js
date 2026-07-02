@@ -71,12 +71,19 @@ const leona = {
 
 console.log(leona);
 
-const calculatebutton = document.getElementById("calculate");
-const ziggsDamage = document.getElementById("ZiggsDamage");
-const abilityLevel = document.getElementById("abilityLevel");
+const offenseChampion = document.getElementById("offenseChampion");
+const defenseChampion = document.getElementById("defenseChampion");
+
+const offenseLevel = document.getElementById("offenseLevel");
 const defenseLevel = document.getElementById("defenseLevel");
-const leonaRemainingHealth = document.getElementById("LeonaRemainingHealth");
+
 const ability = document.getElementById("ability");
+const abilityLevel = document.getElementById("abilityLevel");
+
+const damageResult = document.getElementById("damageResult");
+const remainingHealthResult = document.getElementById("remainingHealthResult");
+
+const calculateButton = document.getElementById("calculate");
 
 function calculateStat(baseStat, growthStat, level) {
     return Math.round(
@@ -85,39 +92,17 @@ function calculateStat(baseStat, growthStat, level) {
     );
 }
 
-calculatebutton.addEventListener("click", () => {
+calculateButton.addEventListener("click", () => {
     console.log("Calculate button clicked");
-    console.log(ability.value);
-    console.log(defenseLevel.value);
-    let ziggsQDamage = ziggs.abilities[0].damage[abilityLevel.value - 1];
-    let ziggsWDamage = ziggs.abilities[1].damage[abilityLevel.value - 1];
-    let ziggsEDamage = ziggs.abilities[2].damage[abilityLevel.value - 1];
-    let ziggsRDamage = ziggs.abilities[3].damage[abilityLevel.value - 1];
 
-    let selectedDamage = ziggsQDamage;
-    
-    if (ability.value === "Q") {
-    selectedDamage = ziggsQDamage;
-}
-    if (ability.value === "W") {
-    selectedDamage = ziggsWDamage;
-}
-    if (ability.value === "E") {
-    selectedDamage = ziggsEDamage;
-}
-    if (ability.value === "R") {
-    selectedDamage = ziggsRDamage;
-}
+    console.log("Offense Champion:", offenseChampion.value);
+    console.log("Offense Level:", offenseLevel.value);
+    console.log("Ability:", ability.value);
+    console.log("Ability Level:", abilityLevel.value);
 
- let leonaHP = calculateStat(
-    leona.stats.hp,
-    leona.stats.hpGrowth,
-    defenseLevel.value
-);
+    console.log("Defense Champion:", defenseChampion.value);
+    console.log("Defense Level:", defenseLevel.value);
 
-console.log(leonaHP);
-
-    let remainingHealth = leonaHP - selectedDamage;
-    ziggsDamage.textContent = "Ziggs Damage: " + selectedDamage;
-    leonaRemainingHealth.textContent = "Leona Remaining Health: " + remainingHealth;
+    damageResult.textContent = "Damage:";
+    remainingHealthResult.textContent = "Remaining Health:";
 });
