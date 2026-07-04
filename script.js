@@ -60,14 +60,37 @@ function calculateStat(baseStat, growthStat, level) {
 calculateButton.addEventListener("click", () => {
     console.log("Calculate button clicked");
 
-    console.log("Offense Champion:", offenseChampion.value);
-    console.log("Offense Level:", offenseLevel.value);
-    console.log("Ability:", ability.value);
-    console.log("Ability Level:", abilityLevel.value);
+    const selectedOffenseChampion = champions[offenseChampion.value];
+    const selectedDefenseChampion = champions[defenseChampion.value];
 
-    console.log("Defense Champion:", defenseChampion.value);
-    console.log("Defense Level:", defenseLevel.value);
+    const defenderLevel = Number(defenseLevel.value);
 
-    damageResult.textContent = "Damage:";
-    remainingHealthResult.textContent = "Remaining Health:";
+    const defenderHP = calculateStat(
+        selectedDefenseChampion.stats.hp,
+        selectedDefenseChampion.stats.hpperlevel,
+        defenderLevel
+    );
+
+    const defenderArmor = calculateStat(
+        selectedDefenseChampion.stats.armor,
+        selectedDefenseChampion.stats.armorperlevel,
+        defenderLevel
+    );
+
+const defenderSpellblock = calculateStat(
+        selectedDefenseChampion.stats.spellblock,
+        selectedDefenseChampion.stats.spellblockperlevel,
+        defenderLevel
+    );
+
+    console.log("Defender Stats:", {
+    hp: defenderHP,
+    armor: defenderArmor,
+    magicResist: defenderSpellblock,
+});
+
+    damageResult.textContent = "Attacker: " + selectedOffenseChampion.name;
+
+    remainingHealthResult.textContent =
+    selectedDefenseChampion.name + " HP: " + defenderHP;
 });
