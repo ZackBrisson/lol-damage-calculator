@@ -12,17 +12,43 @@ const remainingHealthResult = document.getElementById("remainingHealthResult");
 
 const calculateButton = document.getElementById("calculate");
 
+let champions = {};
+
 console.log("Script loaded");
 
 fetch("https://ddragon.leagueoflegends.com/api/versions.json")
     .then(response => response.json())
     .then(versions => {
-        console.log("Latest version:", versions[0]);
+        const latestVersion = versions[0];
+        console.log("Latest version:", latestVersion);
+
+        fetch(`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/en_US/champion.json`)
+            .then(response => response.json())
+           .then(championData => {
+    champions = championData.data;
+
+    console.log("Champion data:", champions);
+    console.log("Ziggs data:", champions.Ziggs);
+
+    populateChampionDropdown(offenseChampion, champions);
+    populateChampionDropdown(defenseChampion, champions);
+});
     })
     .catch(error => {
         console.log("Data Dragon error:", error);
     });
 
+function populateChampionDropdown(dropdown, champions) {
+    Object.values(champions).forEach(champion => {
+        const option = document.createElement("option");
+
+        option.value = champion.id;
+        option.textContent = champion.name;
+
+        dropdown.appendChild(option);
+    });
+}
+    
 
 function calculateStat(baseStat, growthStat, level) {
     return Math.round(
